@@ -79,7 +79,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd Catalog-of-my-things
-  git clone https://github.com/Zuwairanajma/Catalog-of-my-things.git
+  git clone https://git@github.com:AbuTalha3/catalog-of-my-things.git
 ```
 
 ### Install
