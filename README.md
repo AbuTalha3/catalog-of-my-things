@@ -172,7 +172,7 @@ If you like this project please show support by staring ⭐️.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-* We would like to thank Microverse for accommodating us in the Full-time Software Development program
+* We would like to thank Microverse for providing us the oppertunity to learn Ruby and other languages
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
