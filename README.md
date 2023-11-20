@@ -1,5 +1,3 @@
-# catalog-of-my-things
-in this project we will create a console app that will help you to keep a record of different types of things you own: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below. The data will be stored in JSON files.
 # Catalog-of-my-things
 
 <a name="readme-top"></a>
@@ -30,7 +28,8 @@ in this project we will create a console app that will help you to keep a record
 
 # 📖 [Catalog-of-my-things] <a name="about-project"></a>
 
-**[Catalog-of-my-things]** Is a console app that helps keep records of different types of things: **books**, **music albums**, and **games**.The data is stored in JSON files. A database with tables structure analogical to the program's class structure is prepared.
+# catalog-of-my-things
+In this project we have created a console app that will help to keep a record of different types of things you own: *books*, *music albums*, and *games*. Everything is based on the UML class diagram presented below. The data will be stored in JSON files.
 
 ## Video Presentation <a name="livelink"></a>
 - [Click here to watch the video](https://drive.google.com/file/d/1zSaE7DSHu502l3sZpT-sFj0UtLbKRn5y/view?usp=sharing)
