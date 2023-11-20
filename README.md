@@ -125,7 +125,7 @@ To run tests, run the following command:
 
 - GitHub: [@Abu Talha](https://github.com/abutalha3)
 - Twitter: [@Abu Tallha](https://twitter.com/AbuTalha8T)
-- LinkedIn: [](<-- LinkedIn: has been blocked due to some issue-->)
+- LinkedIn: [@Abu Talha](https://www.linkedin.com/in/abu-talha-najeeb-akhun-393b8b292/)
 
 👤 **Author2**
 *[Siddhartha Ghosh]*
