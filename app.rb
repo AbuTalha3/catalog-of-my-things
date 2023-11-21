@@ -69,7 +69,7 @@ class App
     @labels << new_label
   end
 
-  def add_a_music_album()
+  def add_a_music_album
     puts 'Is it on spotify?'
     on_spotify = gets.chomp
     puts 'Publish date: '
