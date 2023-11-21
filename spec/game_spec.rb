@@ -1,4 +1,4 @@
-require_relative '../classes/games-and-authors/games'
+require_relative '../classes/games'
 
 RSpec.describe Game do
   describe '#initialize' do

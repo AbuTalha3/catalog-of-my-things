@@ -1,4 +1,5 @@
-require_relative '../classes/games-and-authors/author'
+require_relative '../classes/author'
+require_relative '../classes/item'
 
 describe 'Testing Author classes' do
   before(:context) do
