@@ -10,6 +10,8 @@ class MusicAlbum < Item
     @on_spotify = on_spotify
   end
 
+  private
+
   def can_be_archived?
     (Date.today.year - @publish_date.year) >= 10 && @on_spotify == true
   end
