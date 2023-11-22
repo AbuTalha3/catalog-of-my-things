@@ -130,16 +130,16 @@ To run tests, run the following command:
 👤 **Author2**
 *[Siddhartha Ghosh]*
 
-- GitHub: []()
-- Twitter: []()
-- LinkedIn: []()
+- GitHub: [@Siddhartha](https://github.com/siddghosh108)
+- Twitter: [@Siddhartha](https://twitter.com/siddharthaghos9)
+- LinkedIn: [@Siddhartha](https://www.linkedin.com/in/siddhartha-ghosh-65902718/)
 
 👤 **Author3**
 *[jkanyi-web]*
 
-- GitHub: []()
-- Twitter: []()
-- LinkedIn: []()
+- GitHub: [@jkanyi-web](https://github.com/jkanyi-web)
+- Twitter: [@V_Kanyi](https://twitter.com/V_Kanyi)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/victor-kanyi)
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
