@@ -30,7 +30,7 @@
 In this project we have created a console app that will help to keep a record of different types of things you own: *books*, *music albums*, and *games*. Everything is based on the UML class diagram presented below. The data will be stored in JSON files.
 
 ## Video Presentation <a name="livelink"></a>
-- [Click here to watch the video](https://drive.google.com/file/d/1TBwIlETqqh7QqdgAeTZ3Bguhgnjg9U8O/view?usp=sharing)
+- [Click here to watch the video](Will be added later)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
