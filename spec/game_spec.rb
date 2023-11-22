@@ -18,13 +18,15 @@ RSpec.describe Game do
     it 'returns true when last_played_at is older than 2 years' do
       two_years_ago = Time.now - (2 * 365 * 24 * 60 * 60)
       game = Game.new(true, two_years_ago)
-      expect(game.can_be_archived?).to be true
+      # expect(game.can_be_archived?).to be true
+      expect(game.send(:can_be_archived?)).to be true
     end
 
     it 'returns false when last_played_at is within 2 years' do
       one_year_ago = Time.now - (365 * 24 * 60 * 60)
       game = Game.new(true, one_year_ago)
-      expect(game.can_be_archived?).to be false
+      # expect(game.can_be_archived?).to be false
+      expect(game.send(:can_be_archived?)).to be false
     end
   end
 end

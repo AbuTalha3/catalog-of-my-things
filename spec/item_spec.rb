@@ -30,12 +30,14 @@ RSpec.describe Item do
   describe '#can_be_archived?' do
     it 'returns true for an item published more than 10 years ago' do
       item = Item.new(ten_years_ago)
-      expect(item.can_be_archived?).to be_truthy
+      # expect(item.can_be_archived?).to be_truthy
+      expect(item.send(:can_be_archived?)).to be_truthy
     end
 
     it 'returns false for an item published less than 10 years ago' do
       item = Item.new(Date.today)
-      expect(item.can_be_archived?).to be_falsey
+      # expect(item.can_be_archived?).to be_falsey
+      expect(item.send(:can_be_archived?)).to be_falsey
     end
   end
 

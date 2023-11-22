@@ -8,7 +8,8 @@ describe MusicAlbum do
       it 'returns true' do
         publish_date = Date.today - (10 * 365)
         music_album = MusicAlbum.new(publish_date, true)
-        expect(music_album.can_be_archived?).to eq(true)
+        # expect(music_album.can_be_archived?).to eq(true)
+        expect(music_album.send(:can_be_archived?)).to eq(true)
       end
     end
 
@@ -16,7 +17,8 @@ describe MusicAlbum do
       it 'returns false' do
         publish_date = Date.today - (5 * 365)
         music_album = MusicAlbum.new(publish_date, true)
-        expect(music_album.can_be_archived?).to eq(false)
+        # expect(music_album.can_be_archived?).to eq(false)
+        expect(music_album.send(:can_be_archived?)).to eq(false)
       end
     end
 
@@ -24,7 +26,8 @@ describe MusicAlbum do
       it 'returns false' do
         publish_date = Date.today - (10 * 365)
         music_album = MusicAlbum.new(publish_date, false)
-        expect(music_album.can_be_archived?).to eq(false)
+        # expect(music_album.can_be_archived?).to eq(false)
+        expect(music_album.send(:can_be_archived?)).to eq(false)
       end
     end
 
@@ -32,7 +35,8 @@ describe MusicAlbum do
       it 'returns false' do
         publish_date = Date.today - (5 * 365)
         music_album = MusicAlbum.new(publish_date, false)
-        expect(music_album.can_be_archived?).to eq(false)
+        # expect(music_album.can_be_archived?).to eq(false)
+        expect(music_album.send(:can_be_archived?)).to eq(false)
       end
     end
   end
