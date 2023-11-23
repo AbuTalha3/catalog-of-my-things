@@ -1,84 +1,99 @@
-require_relative 'Modules/music_module'
-require_relative 'classes/music/music_album'
-require_relative 'Modules/genre_module'
-require_relative 'Modules/book_module'
-require_relative 'classes/book/book'
-require_relative 'Modules/label_module'
-require_relative 'preserveData/preserve_music'
-require_relative 'preserveData/preserve_genre'
-require_relative 'Modules/game_module'
-require_relative 'Modules/author_module'
+require_relative 'managers/book_manager'
+require_relative 'managers/game_manager'
+require_relative 'managers/music_manager'
+require_relative 'managers/genre_manager'
+require_relative 'managers/author_manager'
+require_relative 'managers/label_manager'
 
 class App
-  attr_accessor :books, :games, :music, :genres, :authors, :labels
-
-  include MusicModule
-  include GenreModule
-  include BookModule
-  include LabelModule
-  include GameModule
-  include AuthorModule
+  attr_accessor :book_manager, :game_manager, :music_manager, :genre_manager, :author_manager, :label_manager
 
   def initialize
-    @songs = []
-    @books = []
-    @games = []
-    @genres = []
-    @labels = []
-    @authors = []
-    @music_album_data = MusicManager.new
+    @book_manager = BookManager.new
+    @game_manager = GameManager.new
+    @music_manager = MusicManager.new
+    @genre_manager = GenreManager.new
+    @author_manager = AuthorManager.new
+    @label_manager = LabelManager.new
     load_data
   end
 
+  def list_all_books
+    @book_manager.all_books.each do |book|
+      puts book
+    end
+  end
+
+  def list_all_music_albums
+    @music_manager.songs.each do |song|
+      puts song
+    end
+  end
+
+  def list_all_games
+    @game_manager.games.each do |game|
+      puts game
+    end
+  end
+
+  def list_all_genres
+    @genre_manager.genres.each do |genre|
+      puts genre
+    end
+  end
+
+  def list_all_labels
+    @label_manager.labels.each do |label|
+      puts label
+    end
+  end
+
+  def list_all_authors
+    @author_manager.authors.each do |author|
+      puts author
+    end
+  end
+
   def load_data
-    @books = PreserveBook.load_books
-    @labels = PreserveLabel.load_labels
-    @songs = @music_album_data.load_music_album
-    @genres = PreserveGenre.load_genres
-    @games = load_games
-    @authors = load_authors
+    @book_manager.load_books
+    @label_manager.load_labels
+    @music_manager.load_music_album
+    @genre_manager.load_genres
+    @game_manager.load_games
+    @author_manager.load_authors
   end
 
   def save_data
-    PreserveBook.save_books(@books)
-    PreserveLabel.save_labels(@labels)
-    PreserveGenre.save_genres(@genres)
-    music_manager = MusicManager.new
-    music_manager.save_music_album(@songs)
-    save_games
-    save_authors
+    @book_manager.save_books
+    @label_manager.save_labels
+    @genre_manager.save_genres
+    @music_manager.save_music_album
+    @game_manager.save_games
+    @author_manager.save_authors
   end
 
   def create_musicalbum
-    MusicModule.add_music_album(self)
+    @music_manager.add_music_album
   end
 
-  def add_book(app)
-    puts 'Please enter the Publisher:'
-    publisher = gets.chomp
-    puts 'Please enter the covers state:'
-    cover_state = gets.chomp
-    puts 'Please enter the published date of the book:'
-    publish_date = gets.chomp
-    puts 'Please enter the title of the book: '
-    title = gets.chomp
-    puts 'Please enter the color of the book: '
-    color = gets.chomp
-    app.created_book(publisher, cover_state, publish_date)
-    new_label = Label.new(title, color)
-    @labels << new_label
+  def add_book
+    @book_manager.add_book
   end
 
   def add_a_music_album
-    puts 'Is it on spotify?'
-    on_spotify = gets.chomp
-    puts 'Publish date: '
-    publish_date = gets.chomp
-    puts 'Enter a name'
+    @music_manager.add_music_album
+  end
+
+  def add_game
+    puts 'Enter game name:'
     name = gets.chomp
-    added_a_music_album(publish_date, on_spotify)
-    new_genre = Genre.new(name)
-    @genres << new_genre
+    puts 'Is the game multiplayer? (yes/no)'
+    multiplayer = gets.chomp.downcase == 'yes'
+    puts 'When was the game last played? (DD/MM/YYYY)'
+    last_played_at = Date.strptime(gets.chomp, '%d/%m/%Y')
+    game = Game.new(name, multiplayer, last_played_at)
+    @game_manager.games << game
   end
 end
+
 App.new

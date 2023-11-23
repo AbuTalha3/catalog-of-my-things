@@ -14,7 +14,7 @@ def main
       4 => -> { app.list_all_genres },
       5 => -> { app.list_all_labels },
       6 => -> { app.list_all_authors },
-      7 => -> { app.add_book(app) },
+      7 => -> { app.add_book },
       8 => -> { app.add_a_music_album },
       9 => -> { app.add_game },
       10 => lambda {
