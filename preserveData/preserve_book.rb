@@ -18,11 +18,13 @@ class PreserveBook
   end
 
   def self.create_book_from_data(book_data)
+    publish_date = valid_date?(book_data['publish_date']) ? Date.parse(book_data['publish_date']) : nil
+
     Book.new(
       title: book_data['title'],
       publisher: book_data['publisher'],
       cover_state: book_data['cover_state'],
-      publish_date: Date.parse(book_data['publish_date'])
+      publish_date: publish_date
     )
   end
   private_class_method :create_book_from_data
@@ -36,4 +38,9 @@ class PreserveBook
     }
   end
   private_class_method :convert_book_to_data
+
+  def self.valid_date?(date_string)
+    !date_string.nil? && !date_string.empty? && Date.parse(date_string) rescue false
+  end
+  private_class_method :valid_date?
 end
