@@ -38,6 +38,5 @@ class MusicManager
                                  label: label
                                })
     @songs << new_album
-    
   end
 end
