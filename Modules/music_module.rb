@@ -9,11 +9,11 @@ module MusicModule
 
   def list_all_music_albums
     if @songs.empty?
-      puts 'There are no music album'
+      puts 'There are no music albums'
     else
+      puts 'List of music albums:'
       @songs.each_with_index do |song, i|
-        puts "Number: #{i + 1}, Is it on spotify?: #{song.on_spotify},
-            Publish Date: #{song.publish_date}"
+        puts "Number: #{i + 1}, Is it on spotify?: #{song.on_spotify}, Publish Date: #{song.publish_date}"
       end
     end
   end

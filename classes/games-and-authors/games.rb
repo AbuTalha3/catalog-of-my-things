@@ -1,14 +1,21 @@
 require 'json'
+require_relative '../archivable'
 
 class Game
-  attr_accessor :multiplayer, :last_played_at
+  attr_accessor :name, :multiplayer, :last_played_at, :archivable
 
-  def initialize(multiplayer, last_played_at)
+  def initialize(name, multiplayer, last_played_at, archivable = Archivable.new(nil, nil, last_played_at))
+    @name = name
     @multiplayer = multiplayer
     @last_played_at = last_played_at
+    @archivable = archivable
   end
 
   def can_be_archived?
-    (Time.now - @last_played_at) >= 2 * 365 * 24 * 60 * 60
+    @archivable.can_be_archived?
+  end
+
+  def to_s
+    "Multiplayer: #{@multiplayer}, Last Played At: #{@last_played_at}"
   end
 end

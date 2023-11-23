@@ -1,15 +1,22 @@
-class Author
-  attr_reader :id, :first_name, :last_name, :items
+require_relative '../id_generator'
+require_relative '../item_manager'
 
-  def initialize(first_name, last_name)
-    @id = Random.rand(1..1000)
+class Author
+  attr_reader :id, :first_name, :last_name, :item_manager
+
+  def initialize(first_name, last_name, item_manager = ItemManager.new)
+    @id = IdGenerator.generate
     @first_name = first_name
     @last_name = last_name
-    @items = []
+    @item_manager = item_manager
   end
 
   def add_item(item)
-    @items << item
+    @item_manager.add_item(item)
     item.author = self
+  end
+
+  def items
+    @item_manager.items
   end
 end
