@@ -1,5 +1,12 @@
 {
   "MusicAlbums": [
-
+    {
+      "title": "Future",
+      "artist": "Future",
+      "genre": "HipHop",
+      "label": "Young Money",
+      "publish_date": "12/12/2023",
+      "on_spotify": "yes"
+    }
   ]
 }

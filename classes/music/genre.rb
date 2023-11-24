@@ -19,4 +19,8 @@ class Genre
   def to_s
     "Genre Name: #{@name}"
   end
+
+  def items
+    @item_manager.items
+  end
 end

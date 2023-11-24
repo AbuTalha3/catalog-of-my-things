@@ -23,6 +23,10 @@ class Book
       "Color: #{color}"
   end
 
+  def check_if_can_be_archived
+    can_be_archived?
+  end
+
   private
 
   def can_be_archived?

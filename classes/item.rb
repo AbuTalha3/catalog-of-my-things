@@ -22,7 +22,7 @@ class Item
 
   def genre=(genre)
     @genre = genre
-    genre.items.push(self) unless genre.items.include?(self)
+    genre.item_manager.add_item(self) unless genre.item_manager.items.include?(self)
   end
 
   def author=(author)
@@ -34,8 +34,6 @@ class Item
     @label = label
     label.items.push(self) unless label.items.include?(self)
   end
-
-  private
 
   def can_be_archived?
     (Date.today.year - @publish_date.year) >= 10

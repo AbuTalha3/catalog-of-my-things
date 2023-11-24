@@ -20,4 +20,8 @@ class Label
   def to_s
     "Label Name: #{@title}"
   end
+
+  def items
+    @item_manager.items
+  end
 end
