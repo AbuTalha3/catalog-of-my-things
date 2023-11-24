@@ -2,7 +2,7 @@ require 'json'
 require_relative '../classes/games-and-authors/author'
 
 class PreserveAuthor
-  DATA_FOLDER = File.expand_path('../../authors.json', __dir__).freeze
+  DATA_FOLDER = File.expand_path('../authors.json', __dir__).freeze
 
   def load_authors
     return [] unless File.exist?(DATA_FOLDER)
@@ -26,6 +26,10 @@ class PreserveAuthor
       }
       file.write(JSON.pretty_generate(data))
     end
+  rescue Errno::ENOENT
+    puts "Failed to open file: #{DATA_FOLDER}"
+  rescue StandardError => e
+    puts "An error occurred: #{e.message}"
   end
 
   private

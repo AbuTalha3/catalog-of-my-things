@@ -22,14 +22,15 @@ class GameManager
     puts 'Please enter the last played at date:'
     last_played_at = gets.chomp
     puts 'Please enter the published date of the game:'
-    publish_date = gets.chomp
     puts 'Please enter the title of the game: '
     title = gets.chomp
     puts 'Please enter the color of the game: '
     color = gets.chomp
-    created_game(multiplayer, last_played_at, publish_date)
+    new_game = Game.new(title, multiplayer, last_played_at)
     new_label = Label.new(title, color)
-    @games << new_label
-    puts 'Success'
+    new_label.add_item(new_game)
+    @games << new_game
+    puts 'Game added Successfully!'
+    save_games
   end
 end

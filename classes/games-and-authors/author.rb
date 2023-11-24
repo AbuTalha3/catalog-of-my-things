@@ -19,4 +19,8 @@ class Author
   def items
     @item_manager.items
   end
+
+  def to_s
+    "#{first_name} #{last_name}"
+  end
 end

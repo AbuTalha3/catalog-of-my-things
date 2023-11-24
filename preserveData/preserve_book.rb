@@ -14,7 +14,7 @@ class PreserveBook
 
   def self.save_books(books)
     book_data = books.map { |book| convert_book_to_data(book) }
-    File.write(DATA_FILE, JSON.dump(book_data))
+    File.write(DATA_FILE, JSON.pretty_generate(book_data)) # Use pretty_generate instead of dump
   end
 
   def self.create_book_from_data(book_data)
@@ -40,7 +40,9 @@ class PreserveBook
   private_class_method :convert_book_to_data
 
   def self.valid_date?(date_string)
-    !date_string.nil? && !date_string.empty? && Date.parse(date_string) rescue false
+    !date_string.nil? && !date_string.empty? && Date.parse(date_string)
+  rescue StandardError
+    false
   end
   private_class_method :valid_date?
 end

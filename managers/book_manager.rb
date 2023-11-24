@@ -42,5 +42,6 @@ class BookManager
                           color: color
                         })
     @books << new_book
+    save_books
   end
 end

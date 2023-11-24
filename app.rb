@@ -15,7 +15,6 @@ class App
     @genre_manager = GenreManager.new
     @author_manager = AuthorManager.new
     @label_manager = LabelManager.new
-    load_data
   end
 
   def list_all_books
@@ -32,7 +31,7 @@ class App
 
   def list_all_games
     @game_manager.games.each do |game|
-      puts game
+      puts "Name: #{game.name}, Multiplayer: #{game.multiplayer}, Last Played At: #{game.last_played_at}"
     end
   end
 
@@ -72,16 +71,29 @@ class App
     @author_manager.save_authors
   end
 
-  def create_musicalbum
-    @music_manager.add_music_album
-  end
-
   def add_book
     @book_manager.add_book
+    puts 'Book created successfully!'
   end
 
   def add_a_music_album
     @music_manager.add_music_album
+    puts 'Album created successfully!'
+  end
+
+  def add_author
+    @author_manager.add_author
+    puts 'Author created successfully!'
+  end
+
+  def add_genre
+    @genre_manager.add_genre
+    puts 'Genre created successfully!'
+  end
+
+  def add_label
+    @label_manager.add_label
+    puts 'Label created successfully!'
   end
 
   def add_game
@@ -93,7 +105,6 @@ class App
     last_played_at = Date.strptime(gets.chomp, '%d/%m/%Y')
     game = Game.new(name, multiplayer, last_played_at)
     @game_manager.games << game
+    puts 'Game created successfully!'
   end
 end
-
-App.new

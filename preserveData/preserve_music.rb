@@ -2,7 +2,7 @@ require 'json'
 require_relative '../classes/music/music_album'
 
 class PreserveMusic
-  DATA_FOLDER = 'music.json'.freeze
+  DATA_FOLDER = 'music_album.json'.freeze
 
   def load_music_album
     return [] unless File.exist?(DATA_FOLDER)
@@ -22,10 +22,6 @@ class PreserveMusic
       }
       file.write(JSON.pretty_generate(data))
     end
-  end
-
-  def self.save_music_album(songs)
-    File.write('music_albums.json', JSON.pretty_generate(songs))
   end
 
   private

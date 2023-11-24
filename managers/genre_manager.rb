@@ -20,5 +20,6 @@ class GenreManager
     name = gets.chomp
     new_genre = Genre.new(name)
     @genres << new_genre
+    save_genres
   end
 end

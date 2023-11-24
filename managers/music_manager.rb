@@ -13,7 +13,7 @@ class MusicManager
   end
 
   def save_music_album
-    PreserveMusic.save_music_album(@songs)
+    @preserve_music.save_music_album(@songs)
   end
 
   def add_music_album
@@ -38,5 +38,6 @@ class MusicManager
                                  label: label
                                })
     @songs << new_album
+    save_music_album
   end
 end

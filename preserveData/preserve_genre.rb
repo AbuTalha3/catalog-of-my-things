@@ -2,7 +2,7 @@ require 'json'
 require_relative '../classes/music/genre'
 
 class PreserveGenre
-  DATA_FILE = 'genre.json'.freeze
+  DATA_FILE = 'genres.json'.freeze
 
   def self.load_genres
     return [] unless File.exist?(DATA_FILE)
@@ -14,7 +14,7 @@ class PreserveGenre
 
   def self.save_genres(genres)
     genre_data = genres.map { |genre| convert_genre_to_data(genre) }
-    File.write(DATA_FILE, JSON.dump(genre_data))
+    File.write(DATA_FILE, JSON.pretty_generate(genre_data))
   end
 
   def self.create_genre_from_data(genre_data)

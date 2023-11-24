@@ -23,5 +23,6 @@ class AuthorManager
     last_name = gets.chomp
     new_author = Author.new(first_name, last_name)
     @authors << new_author
+    save_authors
   end
 end

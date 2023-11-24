@@ -14,7 +14,7 @@ class PreserveLabel
 
   def self.save_labels(labels)
     label_data = labels.map { |label| convert_label_to_data(label) }
-    File.write(DATA_FILE, JSON.dump(label_data))
+    File.write(DATA_FILE, JSON.pretty_generate(label_data))
   end
 
   def self.create_label_from_data(label_data)

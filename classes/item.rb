@@ -2,7 +2,8 @@ require 'date'
 require_relative 'id_generator'
 
 class Item
-  attr_accessor :genre, :author, :label, :publish_date, :archived, :id
+  attr_accessor :publish_date, :archived, :id
+  attr_reader :genre
 
   def initialize(publish_date, archived: true)
     @id = IdGenerator.generate
