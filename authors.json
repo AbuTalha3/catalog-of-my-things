@@ -1,1 +1,8 @@
-[{"first_name":"Luzinda","last_name":"Douglas"},{"first_name":"sidd","last_name":"ghosh"},{"first_name":"abu","last_name":"talha"},{"first_name":"victor","last_name":"kanyi"},{"first_name":"f1","last_name":"l1"},{"first_name":"f2","last_name":"l2"},{"first_name":"f3","last_name":"l3"}]
+{
+  "Authors": [
+    {
+      "first_name": "Robert",
+      "last_name": "Green"
+    }
+  ]
+}

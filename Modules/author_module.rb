@@ -1,8 +1,7 @@
 module AuthorModule
   def save_authors
-    authors_data = []
-    @authors.each do |author|
-      authors_data << { first_name: author.first_name, last_name: author.last_name }
+    authors_data = @authors.map do |author|
+      { first_name: author.first_name, last_name: author.last_name }
     end
     File.write('authors.json', JSON.dump(authors_data))
   end
@@ -23,10 +22,9 @@ module AuthorModule
       puts 'No author found'
     else
       puts 'List of Authors'
-    end
-    @authors.each_with_index do |author, i|
-      print "\n #{i + 1}) Author First Name:", author.first_name, ', '
-      print 'Author Last Name:', author.last_name
+      @authors.each_with_index do |author, i|
+        puts "\n #{i + 1}) Author First Name: #{author.first_name}, Author Last Name: #{author.last_name}"
+      end
     end
   end
 end

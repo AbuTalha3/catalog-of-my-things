@@ -1,1 +1,6 @@
-[{"title":"Title 1","color":"Color 1"},{"title":"Title 2","color":"Color 2"},{"title":"Title 3","color":"Color 3"},{"title":"Title 4","color":"Color 4"},{"title":"Title 5","color":"Color 5"},{"title":"t1","color":"red"},{"title":"t1","color":"cl1"}]
+[
+  {
+    "title": "Warner Bros",
+    "color": "Gold"
+  }
+]
