@@ -24,8 +24,6 @@ class MusicAlbum < Item
       "Label: #{@label}"
   end
 
-  private
-
   def can_be_archived?
     @archivable.can_be_archived?
   end
