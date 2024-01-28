@@ -29,7 +29,7 @@
 # 📖 [Catalog-of-my-things] <a name="about-project"></a>
 In this project we have created a `console app` that will help to keep a record of different types of things you own: `*books*`, `*music albums*`, and `*games*`. Everything is based on the UML class diagram presented below. The data will be stored in `JSON files`.
 
-## Video Presentation <a name="livelink"></a>
+## Video Presentation <a name="Livelink"></a>
 - [Click here to watch the video](https://drive.google.com/file/d/1bTcPpXG-SFziVLfW2o0VBlADFrKf45Ks/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
